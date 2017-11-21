@@ -129,17 +129,17 @@ declaration:
 ## 主题评论
 ### gitment
 gitment:
-  enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
+  enable: true
+  owner: yangcore
+  repo: hexo
+  client_id: 90aad1801bc73d1e8810
+  client_secret: 7023d8fddf00d5e12519705a787aebf23bb65d4b
   perPage: 10
 
 
 ### 友言评论
 uyan:
-  enable: true
+  enable: false
   uyan_id: 1966422
 
 
