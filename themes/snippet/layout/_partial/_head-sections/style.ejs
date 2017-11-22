@@ -2,7 +2,7 @@
     var _bootstrap = '//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4';
     var _fontAwe =  theme.fontAwesome || '/css/thirdParty/font-awesome.min.css?rev=4.7.0';
     var _gitmentStyle = '//imsun.github.io/gitment/style/default.css';
-    var _highlightStyle = '../../../css/default.min.css';
+    var _highlightStyle ='//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css'
     var style = '/css/style.css?rev=@@hash';
 %>
 
@@ -10,11 +10,10 @@
     <%- css([_gitmentStyle]) %>
 <% } %>
 
-<% if(theme.highlightTheme && is_post()){ %>
-    <%- css([_highlightStyle]) %>
-<% } %>
-
 <%- css([_bootstrap, _fontAwe, style]) %>
+<%if (theme.highlightTheme && is_post() ){%>
+    <%- css([_highlightStyle]) %>
+<%}%>
 
 
 

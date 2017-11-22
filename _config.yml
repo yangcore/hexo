@@ -38,8 +38,9 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+# 要自定义用highlight.js 必须关闭，不然不好用
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
