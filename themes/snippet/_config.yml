@@ -50,11 +50,11 @@ jsonContent:
     tags: true
 
 ## 网站公告设置
-notification: |-
-            <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
-            主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-            <hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request。<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-            </p>
+# notification: |-
+#             <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
+#             主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
+#             <hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request。<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+#             </p>
 
 ## 社交设置
 social:
@@ -129,17 +129,17 @@ declaration:
 ## 主题评论
 ### gitment
 gitment:
-  enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
+  enable: true
+  owner: yangcore
+  repo: hexo
+  client_id: 90aad1801bc73d1e8810
+  client_secret: 7023d8fddf00d5e12519705a787aebf23bb65d4b
   perPage: 10
 
 
 ### 友言评论
 uyan:
-  enable: true
+  enable: false
   uyan_id: 1966422
 
 

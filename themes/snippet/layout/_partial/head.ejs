@@ -19,5 +19,21 @@
     <%- partial('_vendor/cnzz_analytics') %>
     <%- partial('_vendor/baidu_sitemap') %>
     <%- partial('_vendor/baidu_analytics') %>
+    <style>
+    .gitment-container .gitment-comment-body-folded::after{
+        display: block !important;
+        content: "单击以展开" !important;
+        text-align: center;
+        color: #666;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        left: 0;
+        bottom: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, .9);
+    }
+    </style>
 </head>
 

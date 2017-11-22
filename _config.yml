@@ -7,12 +7,12 @@ title: 杨超的博客
 subtitle: 
 description: 杨超的博客
 author: yangchao
-language:
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://yangcore.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -25,20 +25,22 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+# 跳过hexo渲染 自定义页面路径
+skip_render: yang/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
-titlecase: false # Transform title into titlecase
+titlecase: true # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+# 要自定义用highlight.js 必须关闭，不然不好用
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
@@ -77,4 +79,6 @@ theme: snippet
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/yangcore/yangcore.github.io.git
+  branch: master
