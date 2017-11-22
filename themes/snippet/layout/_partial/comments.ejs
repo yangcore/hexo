@@ -42,7 +42,7 @@
               return reaction.content === 'heart' && reaction.user.login === user.login;
             });
             likeButton.className = 'gitment-header-like-btn';
-            likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '不喜欢' : '喜欢') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> 喜欢过' : '') + '\n  ';
+            likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '赞' : '赞') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> 个赞' : '') + '\n  ';
 
             if (likedReaction) {
               likeButton.classList.add('liked');
@@ -58,7 +58,7 @@
             container.appendChild(likeButton);
 
             var commentsCount = document.createElement('span');
-            commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> 评论' : '') + '\n  ';
+            commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> 条评论' : '') + '\n  ';
             container.appendChild(commentsCount);
 
             var issueLink = document.createElement('a');
@@ -204,8 +204,8 @@
   commentsList.className = 'gitment-comments-list';
 
   comments.forEach(function (comment) {
-    var createDate = moment(new Date(comment.created_at)).format('MM/YY h:mm');
-    var updateDate = moment(new Date(comment.updated_at)).format('MM/YY h:mm');
+    var createDate = moment(new Date(comment.created_at)).format('MM月DD日 h:mm');
+    var updateDate = moment(new Date(comment.updated_at)).format('MM月DD日 h:mm');
     var commentItem = document.createElement('li');
     commentItem.className = 'gitment-comment';
     commentItem.innerHTML = '\n      <a class="gitment-comment-avatar" href="' + comment.user.html_url + '" target="_blank">\n        <img class="gitment-comment-avatar-img" src="' + comment.user.avatar_url + '"/>\n      </a>\n      <div class="gitment-comment-main">\n        <div class="gitment-comment-header">\n          <a class="gitment-comment-name" href="' + comment.user.html_url + '" target="_blank">\n            ' + comment.user.login + '\n          </a>\n          评论\n          <span title="' + createDate + '">' + createDate + '</span>\n          ' + (createDate !== updateDate ? ' \u2022 <span title="评论编辑在 ' + updateDate + '">编辑</span>' : '') + '\n          <div class="gitment-comment-like-btn">' + _icons.heart + ' ' + (comment.reactions.heart || '') + '</div>\n        </div>\n        <div class="gitment-comment-body gitment-markdown">' + comment.body_html + '</div>\n      </div>\n    ';
