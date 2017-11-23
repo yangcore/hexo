@@ -1,0 +1,1 @@
+hexo clean & hexo clean & hexo clean & hexo clean & hexo clean & hexo g & gulp & hexo d
