@@ -88,12 +88,22 @@ window.onload = function() {
     scrollCallback();
 
     //监听滚动事件
-    window.addEventListener('scroll', function() {
-        clearTimeout(timer);
-        timer = setTimeout(function fn() {
-            scrollCallback();
-        }, 200);
-    });
+    if (window.attachEvent) {    
+        window.attachEvent('scroll', function() {
+            clearTimeout(timer);
+            timer = setTimeout(function fn() {
+                scrollCallback();
+            }, 200);
+        });  
+    } else if (window.addEventListener) {    
+        window.addEventListener('scroll', function() {
+            clearTimeout(timer);
+            timer = setTimeout(function fn() {
+                scrollCallback();
+            }, 200);
+        });      
+    } 
+   
 
     //返回顶部
 	$backToTop.onclick = function() {
