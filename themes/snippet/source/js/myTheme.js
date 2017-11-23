@@ -61,7 +61,7 @@ var _icons = {
         issueLink.target = '_blank';
         issueLink.innerText = '问题页面';
         container.appendChild(issueLink);
-        if(meta.html_url !== undefined){
+        if(meta.html_url !== undefined && user.id){
           return container;
         }else{
           return document.createElement('div');
@@ -203,7 +203,7 @@ var createDate = moment(new Date(comment.created_at)).format('MM月DD日 h:mm');
 var updateDate = moment(new Date(comment.updated_at)).format('MM月DD日 h:mm');
 var commentItem = document.createElement('li');
 commentItem.className = 'gitment-comment';
-commentItem.innerHTML = '\n      <a class="gitment-comment-avatar" href="' + comment.user.html_url + '" target="_blank">\n        <img class="gitment-comment-avatar-img" src="' + comment.user.avatar_url + '"/>\n      </a>\n      <div class="gitment-comment-main">\n        <div class="gitment-comment-header">\n          <a class="gitment-comment-name" href="' + comment.user.html_url + '" target="_blank">\n            ' + comment.user.login + '\n          </a>\n          评论\n          <span title="' + createDate + '">' + createDate + '</span>\n          ' + (createDate !== updateDate ? ' \u2022 <span title="评论编辑在 ' + updateDate + '">编辑</span>' : '') + '\n          <div class="gitment-comment-like-btn">' + _icons.heart + ' ' + (comment.reactions.heart || '') + '</div>\n        </div>\n        <div class="gitment-comment-body gitment-markdown">' + comment.body_html + '</div>\n      </div>\n    ';
+commentItem.innerHTML = '\n      <a class="gitment-comment-avatar" href="' + comment.user.html_url + '" target="_blank">\n        <img class="gitment-comment-avatar-img" src="' + comment.user.avatar_url + '"/>\n      </a>\n      <div class="gitment-comment-main">\n        <div class="gitment-comment-header">\n          <a class="gitment-comment-name" href="' + comment.user.html_url + '" target="_blank">\n            ' + comment.user.login + '\n          </a>\n          评论\n          <span title="' + createDate + '">' + createDate + '</span>\n          ' + (createDate !== updateDate ? ' \u2022 <span title="评论编辑在 ' + updateDate + '">编辑</span>' : '') + (user.id ? ('\n          <div class="gitment-comment-like-btn">' + _icons.heart + ' ' + (comment.reactions.heart || '') + '</div>\n        ') : "") + '</div>\n        <div class="gitment-comment-body gitment-markdown">' + comment.body_html + '</div>\n      </div>\n    ';
 var likeButton = commentItem.querySelector('.gitment-comment-like-btn');
 var likedReaction = commentReactions[comment.id] && commentReactions[comment.id].find(function (reaction) {
   return reaction.content === 'heart' && reaction.user.login === user.login;
@@ -214,10 +214,12 @@ if (likedReaction) {
     return instance.unlikeAComment(comment.id);
   };
 } else {
-  likeButton.classList.remove('liked');
-  likeButton.onclick = function () {
-    return instance.likeAComment(comment.id);
-  };
+  if(user.id){
+    likeButton.classList.remove('liked');
+    likeButton.onclick = function () {
+      return instance.likeAComment(comment.id);
+    };
+  }
 }
 
 // dirty

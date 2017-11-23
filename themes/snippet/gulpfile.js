@@ -15,6 +15,7 @@
         rev = require('gulp-rev-append'),
         sequence = require('gulp-sequence'),
         path = require('path'),
+        babel =require('gulp-babel'),
         paths = {
             root: './',
             source: './themes/snippet/source/' //主题下原文件
@@ -72,7 +73,13 @@
     // 压缩处理 js
     gulp.task('minify-js', function() {
         return gulp.src('./public/js/*.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(uglify())
+        .pipe(plumber({
+            errorHandler: notify.onError('Error: <%= error.message %>')
+        }))
         .pipe(gulp.dest('./public/js'))
         .pipe(notify({message: 'js minify complete'}));
     });

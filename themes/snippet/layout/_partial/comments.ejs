@@ -1,7 +1,7 @@
-<% if(theme.uyan.enable && is_post()){ %>
-  <div id="uyan_frame"></div>
-  <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.uyan.uyan_id %>"></script>
-  <% } else if(theme.gitment.enable && is_post()) { %>
+    <% if(theme.uyan.enable && is_post()){ %>
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.uyan.uyan_id %>"></script>
+    <% } else if(theme.gitment.enable && is_post()) { %>
 
     <%- js('https://cdn.polyfill.io/v2/polyfill.js?features=es6') %>
     <%- js('//cdn.bootcss.com/moment.js/2.19.2/moment-with-locales.min.js') %>
@@ -24,8 +24,7 @@
       }else{
         document.getElementById('comments').style.display='none'
       }
-         
     </script>
     <% } else { %>
       <p>评论系统未开启，无法评论！</p>
-      <%}%>
+    <%}%>

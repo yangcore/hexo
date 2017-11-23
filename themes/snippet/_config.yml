@@ -18,7 +18,9 @@ menu:
 - page: 资料
   url: /categories/资料/
   icon: 
-
+- page: 关于我
+  url: /yang/about.html
+  icon: 
 ## favicon 
 favicon: /favicon.ico
 
@@ -31,7 +33,7 @@ rss: /atom.xml
 ## widgets
 widgets:
   - search
-  - notification
+  # - notification
   - social
   - category
   - archive
@@ -108,7 +110,7 @@ excerptLength: 120
 noCategoryText: '无'
 
 ## 代码高亮配置
-highlightTheme: default
+highlightTheme: true
 
 ## ICON配置
 fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
@@ -123,7 +125,7 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://yangcore.github.io/" target="_blank">https://yangcore.github.io/</a>
 
 
 ## 主题评论
