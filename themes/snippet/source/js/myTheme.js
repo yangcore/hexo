@@ -214,10 +214,12 @@ if (likedReaction) {
     return instance.unlikeAComment(comment.id);
   };
 } else {
-  likeButton.classList.remove('liked');
-  likeButton.onclick = function () {
-    return instance.likeAComment(comment.id);
-  };
+  if(user.id){
+    likeButton.classList.remove('liked');
+    likeButton.onclick = function () {
+      return instance.likeAComment(comment.id);
+    };
+  }
 }
 
 // dirty
