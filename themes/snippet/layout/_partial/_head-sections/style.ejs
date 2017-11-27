@@ -6,7 +6,7 @@
     var style = '/css/style.css?rev=@@hash';
 %>
 
-<% if(theme.gitment.enable && is_post()){ %>
+<% if(is_post()){ %>
     <%- css([_gitmentStyle]) %>
 <% } %>
 
