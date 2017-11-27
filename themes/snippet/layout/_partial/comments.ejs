@@ -1,14 +1,10 @@
-    <% if(theme.uyan.enable && is_post()){ %>
     <div id="uyan_frame"></div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.uyan.uyan_id %>"></script>
-    <% } else if(theme.gitment.enable && is_post()) { %>
-
     <%- js('https://cdn.polyfill.io/v2/polyfill.js?features=es6') %>
     <%- js('//cdn.bootcss.com/moment.js/2.19.2/moment-with-locales.min.js') %>
     <%- js('https://imsun.github.io/gitment/dist/gitment.browser.js') %>
     <%- js('js/myTheme.js?rev=@@hash') %>
     <script>
-      if(typeof(Array.prototype.includes)==="function"){
+      if(typeof(Array.prototype.includes)==="function" && window.location.href.indexOf('github')>0){
         var gitment = new Gitment({
             id: window.location.pathname,
             owner: "<%= theme.gitment.owner%>",
@@ -21,10 +17,12 @@
             theme: myTheme
           });
           gitment.render('comments');
-      }else{
-        document.getElementById('comments').style.display='none'
+      }else if(window.location.href.indexOf('coding')>0){
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.src = 'http://v2.uyan.cc/code/uyan.js?uid=<%= uyan_id%>',
+        uyan_frame = document.getElementById('uyan_frame'),
+        parent = uyan_frame.parentNode;
+        parent.insertBefore(newScript,uyan_frame.nextSibling);
       }
     </script>
-    <% } else { %>
-      <p>评论系统未开启，无法评论！</p>
-    <%}%>
