@@ -20,7 +20,7 @@
       }else if(window.location.href.indexOf('coding')>0){
         var newScript = document.createElement('script');
         newScript.type = 'text/javascript';
-        newScript.src = 'http://v2.uyan.cc/code/uyan.js?uid=<%= uyan_id%>',
+        newScript.src = 'http://v2.uyan.cc/code/uyan.js?uid=<%= theme.uyan.uyan_id%>',
         uyan_frame = document.getElementById('uyan_frame'),
         parent = uyan_frame.parentNode;
         parent.insertBefore(newScript,uyan_frame.nextSibling);
