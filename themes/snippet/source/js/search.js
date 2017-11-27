@@ -22,7 +22,7 @@
     function loadData(success) {
         if (!searchData) {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/content.json', true);
+            xhr.open('GET', '/blog/content.json', true);
             xhr.onload = function() {
                 if (this.status >= 200 && this.status < 300) {
                     var res = JSON.parse(this.response||this.responseText);
@@ -53,7 +53,7 @@
             html = data.map(function(post) {
                 return tpl(searchTpl, {
                     title: post.title,
-                    path: post.path,
+                    path: 'blog/'+post.path,
                     content: content(post.text)
                 });
             }).join('');
