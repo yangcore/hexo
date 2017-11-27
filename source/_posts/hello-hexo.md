@@ -2,6 +2,7 @@
 title: Hello Hexo
 tags: hexo
 categories: 前端
+date: 2017-11-21
 ---
 第一篇博客，就写写我在配置Hexo的时候遇到的问题吧
 # 跳过Hexo的渲染，创建自定义网页
