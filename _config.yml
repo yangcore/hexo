@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://yangcore.github.io/blog
-root: /blog/
+url: https://yangcore.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -81,5 +81,5 @@ theme: snippet
 deploy:
   type: git
   # repo: https://github.com/yangcore/yangcore.github.io.git
-  repo: https://git.coding.net/yangcore/blog.git
+  repo: https://git.coding.net/yangcore/yangcore.coding.me.git
   branch: master
