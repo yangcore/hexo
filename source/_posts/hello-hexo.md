@@ -65,7 +65,8 @@ hljs.initHighlightingOnLoad(); //初始化代码高亮
 ```
 **注意：** 如果自己外部引入 highlight.js 来制作代码高亮的，必须关闭 hexo 自带的 highlight 的配置，_config.yml highlight.enable 改为 fasle 不然可能会造成代码块渲染错误
 
-
+# 主题更换
+本博客采用的是 [hexo-theme-snippet](https://github.com/shenliyang/hexo-theme-snippet "主题") 喜欢的可以去看一下，作者中国人，说明写的很详细，特别是里面说了一下 Travis CI 持续集成的相关配置；本博客就是使用Travis CI持续集成构建的
 
 
 
