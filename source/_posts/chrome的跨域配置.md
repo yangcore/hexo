@@ -1,7 +1,7 @@
 ---
 title: chrome的跨域配置
 tags: chrome
-categories: 前端
+categories: 工具
 date: 2017-12-02
 ---
 # chrome的跨域配置,前端调试利器
