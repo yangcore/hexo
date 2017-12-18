@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 杨超的博客
+title: yangcore's blog
 subtitle: 
-description: 杨超的博客
+description: yangcore's blog
 author: yangchao
 language: zh-CN
 timezone:
@@ -80,5 +80,6 @@ theme: snippet
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/yangcore/yangcore.github.io.git
+  # repo: https://github.com/yangcore/yangcore.github.io.git
+  repo: https://git.coding.net/yangcore/yangcore.coding.me.git
   branch: master

@@ -125,13 +125,12 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://yangcore.github.io/" target="_blank">https://yangcore.github.io/</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://yangcore.github.io" target="_blank">https://yangcore.github.io</a>
 
 
 ## 主题评论
 ### gitment
 gitment:
-  enable: true
   owner: yangcore
   repo: hexo
   client_id: 90aad1801bc73d1e8810
@@ -141,8 +140,7 @@ gitment:
 
 ### 友言评论
 uyan:
-  enable: false
-  uyan_id: 1966422
+  uyan_id: 2150036
 
 
 ## 网站访问统计

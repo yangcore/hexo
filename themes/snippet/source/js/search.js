@@ -53,7 +53,7 @@
             html = data.map(function(post) {
                 return tpl(searchTpl, {
                     title: post.title,
-                    path: post.path,
+                    path:  post.path,
                     content: content(post.text)
                 });
             }).join('');
