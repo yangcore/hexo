@@ -26,3 +26,6 @@ C:\server\nginx-1.0.2>nginx.exe -s reopen
 
 5、查看Nginx版本：
 C:\server\nginx-1.0.2>nginx -v
+
+6、查看进程
+tasklist /fi "imagename eq nginx.exe"
