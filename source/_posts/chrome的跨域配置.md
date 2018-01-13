@@ -52,4 +52,9 @@ https://chrome.google.com/webstore/detail/okehcbagcgnhifhcppklpmillcdnaclp
     
 3. 以上4个位置修改后关闭注册表编辑器，以后无论你如何启动Google Chrome，用户文件和临时文件都会到你所设置的目录加载插件和书签
 
+# 第二种方法更加灵活，就是借助chrome的插件
+
+去到chrome的商店（fq），下载 “Allow-Control-Allow-Origin: *” 或者 “Moesif Origin & CORS Changer” 这个插件，至于说用那个，看个人体验了，我自己是比较喜欢第二个的；然后在里面进行简单的配置就行了；
+“Moesif Origin & CORS Changer” 的插件配置也是比较简单的，我是为了方便 全部设置成了“*”；当然你自己也可以自定义一些参数，不用的时候可以随手关闭，为了安全嘛~~
+
 快快试试吧！！！
